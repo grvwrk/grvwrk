@@ -4,10 +4,10 @@ import { ArrowUpRight, Sun } from 'lucide-react'
 export default function BlogPage() {
   const posts = [
     {
-      title: "AI in Software Development",
-      date: "December 15, 2025",
-      excerpt: "How artificial intelligence is transforming the way we write and maintain code.",
-      slug: "ai-in-software-development"
+      title: "How I'm Learning to Think Like an ML Researcher (As a 2nd-Year Student)",
+      date: "December 23, 2025",
+      excerpt: "The journey from ML tutorials to real research thinking, rebuilding ideas from scratch, and turning them into working projects.",
+      slug: "learning-to-think-like-ml-researcher"
     }
   ]
 

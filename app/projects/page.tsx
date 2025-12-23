@@ -10,7 +10,39 @@ export default function ProjectsPage() {
       technologies: ["Python", "NumPy", "Deep Learning"],
       github: "https://github.com/binaryecheos/elite-ball-knowledge",
       demo: "",
-      status: "Completed"
+      status: "Ongoing",
+    },
+    {
+      title: "dtc-route-rationalization",
+      description: "This project implements a comprehensive framework for dynamic bus service rationalization designed to combat bus bunching and improve headway regularity in urban transit systems.",
+      technologies: ["Gym","XGBoost", "OTD", "Reinforcement Learning"],
+      github: "https://github.com/binaryecheos/dtc-route-rationalization",
+      demo: "",
+      status: "Ongoing",
+    },
+    {
+      title: "Machine Learning Pipeline",
+      description: "Robust ML pipeline for price prediction with MLflow integration and automated deployment for real-time predictions.",
+      technologies: ["MlOps","CI/CD", "Python", "Machine Learning"],
+      github: "https://github.com/binaryecheos/Price-Prediction-Model",
+      demo: "",
+      status: "Ongoing",
+    },
+    {
+      title: "Healthetico",
+      description: "AI-powered healthcare platform for personalized patient care and predictive analytics to eliminate the first prescription.",
+      technologies: ["NextJs","Flask", "Python", "GenAI"],
+      github: "https://github.com/binaryecheos/SU-NATIONAL-HACKATHON",
+      demo: "https://su-national-hackathon.vercel.app/",
+      status: "Ongoing",
+    },
+    {
+      title: "Disease Prediction System",
+      description: "State-of-the-art AI, symptom checking, and biometric data analysis. By integrating symptom NLP, health data, and real-time doctor connection, it enables timely medical insights and improves access to qualified care",
+      technologies: ["NER","HugginFace", "SHAP", "XGBoost"],
+      github: "https://github.com/binaryecheos/symptom-disease-predictor-",
+      demo: "",
+      status: "to be pushed",
     }
   ]
 
