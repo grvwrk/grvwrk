@@ -31,7 +31,7 @@ function Card({
 }) {
   return (
     <div
-      className={`rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card/80 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 ease-in-out hover:-translate-y-1 ${className}`}
+      className={`rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card/80 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 ease-in-out ${className}`}
     >
       {children}
     </div>
@@ -204,8 +204,8 @@ export default function HomePage() {
 
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs mt-4 text-muted-foreground">
               <p>Stars: <span className="text-primary font-semibold">0</span></p>
-              <p>Followers: <span className="text-primary font-semibold">0</span></p>
-              <p>PRs: <span className="text-primary font-semibold">0</span></p>
+              <p>Followers: <span className="text-primary font-semibold">3</span></p>
+              <p>PRs: <span className="text-primary font-semibold">2</span></p>
               <p>Issues: <span className="text-primary font-semibold">0</span></p>
             </div>
           </Card>
@@ -233,7 +233,7 @@ export default function HomePage() {
                 Latest Project
               </h3>
               <p className="text-2xl font-semibold text-muted-foreground mt-2 group-hover:text-foreground transition-colors duration-300">
-                Price Prediction Model
+                dtc-route-rationalization
               </p>
             </div>
             <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
