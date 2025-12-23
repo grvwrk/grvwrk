@@ -100,20 +100,21 @@ export default function HomePage() {
           </h1>
 
           <p className="text-primary">
-            Machine Learning Engineer & Researcher.
+            machine learning engineer & researcher. cs undergrad.
           </p>
 
           <p className="text-base leading-relaxed">
-            ML papers. Notebooks. Backend repos.
-            Turning models into shippable systems.
-            LLMs, APIs, production constraints.
-            Interested in the research × engineering edge.
-            Build stuff. Ship stuff. Repeat.
-            Tech, F1, misc.
+            ml papers. notebooks. backend repos.
+            turning models into shippable systems.
+            llms, apis, production constraints.
+            interested in the research × engineering edge.
+            build stuff. ship stuff. repeat.
+            tech, f1, geopolitics, misc. current focus area is on 
+            small language models and learning optimization.
           </p>
 
           <p className="text-sm">
-            currently under construction. not in a rush.
+           ⚠️ currently under construction. not in a rush.
           </p>
 
           {/* Links */}
@@ -142,7 +143,7 @@ export default function HomePage() {
           </div>
 
           <p>
-            Feel free to reach me out at{' '}
+            feel free to reach me out at{' '}
             <a
               href="mailto:gourav.sahu.1695@gmail.com"
               className="font-semibold text-primary hover:underline"
@@ -168,7 +169,7 @@ export default function HomePage() {
                     <Github className="transition-transform duration-300 group-hover:scale-110" /> GitHub
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    My experiments (aka projects)
+                    my experiments (aka projects)
                   </p>
                 </div>
                 <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -203,7 +204,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs mt-4 text-muted-foreground">
-              <p>Stars: <span className="text-primary font-semibold">0</span></p>
+              <p>Stars: <span className="text-primary font-semibold">9</span></p>
               <p>Followers: <span className="text-primary font-semibold">3</span></p>
               <p>PRs: <span className="text-primary font-semibold">2</span></p>
               <p>Issues: <span className="text-primary font-semibold">0</span></p>

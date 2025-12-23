@@ -4,9 +4,9 @@ import { ArrowUpRight, Sun } from 'lucide-react'
 export default function BlogPage() {
   const posts = [
     {
-      title: "How I'm Learning to Think Like an ML Researcher (As a 2nd-Year Student)",
+      title: "how i'm learning to think like an ml researcher (as a 2nd-year student)",
       date: "December 23, 2025",
-      excerpt: "The journey from ML tutorials to real research thinking, rebuilding ideas from scratch, and turning them into working projects.",
+      excerpt: "the journey from ml tutorials to real research thinking, rebuilding ideas from scratch, and turning them into working projects.",
       slug: "learning-to-think-like-ml-researcher"
     }
   ]
@@ -64,7 +64,7 @@ export default function BlogPage() {
                 href={`/blog/${post.slug}`}
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 ease-in-out hover:gap-3 group text-sm"
               >
-                Read more
+                read more
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
               </Link>
             </article>

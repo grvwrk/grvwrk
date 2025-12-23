@@ -11,62 +11,62 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
-    title: "How I'm Learning to Think Like an ML Researcher (As a 2nd-Year Student)",
+    title: "how i'm learning to think like an ml researcher (as a 2nd-year student)",
     date: "December 23, 2025",
     excerpt: "The journey from ML tutorials to real research thinking, rebuilding ideas from scratch, and turning them into working projects.",
     slug: "learning-to-think-like-ml-researcher",
     content: `
-The last few months have felt like stepping out of “ML tutorials” and into the deep end. Instead of just finishing courses, I’ve been reading actual papers, ripping out the ideas, rewriting them from scratch, and turning them into projects I’m not embarrassed to demo.
+the last few months have felt like stepping out of “ml tutorials” and into the deep end. Instead of just finishing courses, i’ve been reading actual papers, ripping out the ideas, rewriting them from scratch, and turning them into projects i’m not embarrassed to demo.
 
 ---
 
-Starting from the math (for real this time)
+starting from the math (for real this time)
 
-At some point it clicked that if I want to do serious ML research, I can’t treat math like background noise running in another tab. So I went back to basics: linear algebra, probability, optimization, and the early chapters of Goodfellow’s Deep Learning—not to pass exams, but to actually understand what my networks are doing.
+at some point it clicked that if i want to do serious ml research, i can’t treat math like background noise running in another tab. so i went back to basics: linear algebra, probability, optimization, and the early chapters of goodfellow’s deep learning, not to pass exams, but to actually understand what my networks are doing.
 
-Now when training blows up, it’s not just “ugh, lower the LR and pray.” I can usually point to something specific: vanishing gradients in an RNN, overfitting because of a sloppy split, bad initialization, or just cursed data.
-
----
-
-Using papers as build guides, not holy texts
-
-Recently my reading has gone pretty deep into sequence models, nested learning ideas, and how continuous latent spaces + hierarchies actually make models think. I started with classical RNNs, then moved through LSTMs/GRUs and sequence-to-sequence setups, and now I’m more interested in how these things are optimized and structured than just “does it overfit less.”
-
-The main mindset shift: papers aren’t “too advanced for future me” anymore. I treat them like build guides. Skim the main idea, understand the architecture and objective, then open a notebook and try to rebuild a small version. It usually breaks a few times, but that read → implement → debug loop is where the concepts actually stick.
+now when training blows up, it’s not just “ugh, lower the lr and pray.” i can usually point to something specific: vanishing gradients in an rnn, overfitting because of a sloppy split, bad initialization, or just cursed data.
 
 ---
 
-Nested learning and models that learn at different speeds
+using papers as build guides, not holy texts
 
-One concept I’ve been obsessed with lately is nested learning—thinking of a model not as one big monolithic learner, but as a stack of smaller learning problems running at different time scales. The idea is that some parts of the system adapt fast (like “short-term memory”), while others update slowly and act more like long-term structure.
+recently my reading has gone pretty deep into sequence models, nested learning ideas, and how continuous latent spaces + hierarchies actually make models think. i started with classical rnns, then moved through lstms/grus and sequence-to-sequence setups, and now i’m more interested in how these things are optimized and structured than just “does it overfit less.”
 
-Once you see optimizers and architectures this way, things like momentum, adaptive learning rates, or multi-level objectives start to feel like nested optimization problems instead of random tricks. You’re basically asking: which parts of this model should react instantly to new data, and which parts should move only when the signal is strong and consistent?
-
-I’ve been playing with this mentally even when using “normal” architectures—thinking about layers, modules, or even latent variables as living on different time scales, and designing training loops that respect that instead of hammering everything with the same update schedule.
+the main mindset shift: papers aren’t “too advanced for future me” anymore. i treat them like build guides. skim the main idea, understand the architecture and objective, then open a notebook and try to rebuild a small version. it usually breaks a few times, but that read → implement → debug loop is where the concepts actually stick.
 
 ---
 
-Continuous latent spaces and hierarchical representations
+nested learning and models that learn at different speeds
 
-Another rabbit hole: continuous latent spaces and hierarchical representation learning. Generative models and RL papers talk a lot about compressing high-dimensional observations into lower-dimensional continuous states that still capture the important structure.
+one concept i’ve been obsessed with lately is nested learning—thinking of a model not as one big monolithic learner, but as a stack of smaller learning problems running at different time scales. the idea is that some parts of the system adapt fast (like “short-term memory”), while others update slowly and act more like long-term structure.
 
-What interests me is not just “cool images in the latent space,” but how these spaces become more structured and semantic as you go up the hierarchy. Higher-level latent variables tend to capture coarse, semantic stuff (what is happening, what concept is present), while lower levels handle the gritty details (texture, noise, small variations).
+once you see optimizers and architectures this way, things like momentum, adaptive learning rates, or multi-level objectives start to feel like nested optimization problems instead of random tricks. you’re basically asking: which parts of this model should react instantly to new data, and which parts should move only when the signal is strong and consistent?
 
-Once you start thinking like this, you stop seeing your model as a flat stack of layers and more like a nested hierarchy of abstractions: top latents decide “scene / intent / concept,” mid-level latents refine structure, and lower levels fill in the exact details. That view shows up everywhere—from hierarchical VAEs and diffusion models with latent priors to energy-based models with joint latent spaces—and it’s shaping how I think about model design in general.
+i’ve been playing with this mentally even when using “normal” architectures, thinking about layers, modules, or even latent variables as living on different time scales, and designing training loops that respect that instead of hammering everything with the same update schedule.
 
 ---
 
-Trying to act like a research engineer (while still in college)
+continuous latent spaces and hierarchical representations
 
-All of this is slowly rewiring how I see my work. I don’t really feel like “just a student learning ML” anymore. I’m trying to behave like a junior research engineer who happens to still be in college:
+another rabbit hole: continuous latent spaces and hierarchical representation learning. generative models and rl papers talk a lot about compressing high-dimensional observations into lower-dimensional continuous states that still capture the important structure.
 
-- Start from real problems or real questions—how models represent things, how they adapt over time, how hierarchy and latent structure show up—instead of only chasing leaderboard scores.
-- Read enough literature to stand on other people’s shoulders, then aggressively simplify the ideas into something my hardware and brain can actually run.
-- Treat every project like an experiment: define baselines, choose metrics, keep track of what broke, and always ask “Would this setup still make sense if I scaled it up or deployed it?”.
+what interests me is not just “cool images in the latent space,” but how these spaces become more structured and semantic as you go up the hierarchy. higher-level latent variables tend to capture coarse, semantic stuff (what is happening, what concept is present), while lower levels handle the gritty details (texture, noise, small variations).
 
-Next steps are pretty clear in my head: go deeper into nested/continuous latent models, experiment more with hierarchical representations in practical setups, and start open-sourcing more of this thinking so people can poke holes in it.
+once you start thinking like this, you stop seeing your model as a flat stack of layers and more like a nested hierarchy of abstractions: top latents decide “scene / intent / concept,” mid-level latents refine structure, and lower levels fill in the exact details. that view shows up everywhere—from hierarchical vaes and diffusion models with latent priors to energy-based models with joint latent spaces—and it’s shaping how i think about model design in general.
 
-Right now, my “research era” is mostly late-night reading, half-working prototypes, weird bugs, and just enough insight to keep me hooked. And honestly, for a 2nd-year trying to debug his own brain into an ML researcher, that feels like exactly the right amount of chaos.
+---
+
+trying to act like a research engineer (while still in college)
+
+all of this is slowly rewiring how i see my work. i don’t really feel like “just a student learning ml” anymore. i’m trying to behave like a junior research engineer who happens to still be in college:
+
+- start from real problems or real questions: how models represent things, how they adapt over time, how hierarchy and latent structure show up, instead of only chasing leaderboard scores.
+- read enough literature to stand on other people’s shoulders, then aggressively simplify the ideas into something my hardware and brain can actually run.
+- treat every project like an experiment: define baselines, choose metrics, keep track of what broke, and always ask “would this setup still make sense if i scaled it up or deployed it?”.
+
+next steps are pretty clear in my head: go deeper into nested/continuous latent models, experiment more with hierarchical representations in practical setups, and start open-sourcing more of this thinking so people can poke holes in it.
+
+right now, my “research era” is mostly late-night reading, half-working prototypes, weird bugs, and just enough insight to keep me hooked. and honestly, for a 2nd-year trying to debug his own brain into an ml researcher, that feels like exactly the right amount of chaos.
     `
   }
 ]
