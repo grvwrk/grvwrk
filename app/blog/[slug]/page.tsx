@@ -38,7 +38,7 @@ the main mindset shift: papers aren’t “too advanced for future me” anymore
 
 nested learning and models that learn at different speeds
 
-one concept i’ve been obsessed with lately is nested learning—thinking of a model not as one big monolithic learner, but as a stack of smaller learning problems running at different time scales. the idea is that some parts of the system adapt fast (like “short-term memory”), while others update slowly and act more like long-term structure.
+one concept i’ve been obsessed with lately is nested learning, thinking of a model not as one big monolithic learner, but as a stack of smaller learning problems running at different time scales. the idea is that some parts of the system adapt fast (like “short-term memory”), while others update slowly and act more like long-term structure.
 
 once you see optimizers and architectures this way, things like momentum, adaptive learning rates, or multi-level objectives start to feel like nested optimization problems instead of random tricks. you’re basically asking: which parts of this model should react instantly to new data, and which parts should move only when the signal is strong and consistent?
 
@@ -52,7 +52,7 @@ another rabbit hole: continuous latent spaces and hierarchical representation le
 
 what interests me is not just “cool images in the latent space,” but how these spaces become more structured and semantic as you go up the hierarchy. higher-level latent variables tend to capture coarse, semantic stuff (what is happening, what concept is present), while lower levels handle the gritty details (texture, noise, small variations).
 
-once you start thinking like this, you stop seeing your model as a flat stack of layers and more like a nested hierarchy of abstractions: top latents decide “scene / intent / concept,” mid-level latents refine structure, and lower levels fill in the exact details. that view shows up everywhere—from hierarchical vaes and diffusion models with latent priors to energy-based models with joint latent spaces—and it’s shaping how i think about model design in general.
+once you start thinking like this, you stop seeing your model as a flat stack of layers and more like a nested hierarchy of abstractions: top latents decide “scene / intent / concept,” mid-level latents refine structure, and lower levels fill in the exact details. that view shows up everywhere, from hierarchical vaes and diffusion models with latent priors to energy-based models with joint latent spaces, and it’s shaping how i think about model design in general.
 
 ---
 
@@ -66,7 +66,7 @@ all of this is slowly rewiring how i see my work. i don’t really feel like “
 
 next steps are pretty clear in my head: go deeper into nested/continuous latent models, experiment more with hierarchical representations in practical setups, and start open-sourcing more of this thinking so people can poke holes in it.
 
-right now, my “research era” is mostly late-night reading, half-working prototypes, weird bugs, and just enough insight to keep me hooked. and honestly, for a 2nd-year trying to debug his own brain into an ml researcher, that feels like exactly the right amount of chaos.
+right now, my “research era” is mostly late-night reading, half-working prototypes, weird bugs, and just enough insight to keep me hooked.
     `
   }
 ]
