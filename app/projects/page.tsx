@@ -1,131 +1,155 @@
 import Link from 'next/link'
-import { ArrowUpRight, Github, ExternalLink, Sun } from 'lucide-react'
+import { ArrowUpRight, Github, ExternalLink } from 'lucide-react'
 
 export default function ProjectsPage() {
   const projects = [
-    
+    {
+      title: "dtc-route-rationalization",
+      description: "Dynamic bus service rationalization using reinforcement learning and XGBoost to combat bus bunching and improve headway regularity in urban transit systems.",
+      technologies: ["RL", "XGBoost", "Python", "Optimization"],
+      github: "https://github.com/binaryecheos/dtc-route-rationalization",
+      demo: "",
+      status: "Ongoing",
+    },
     {
       title: "elite-ball-knowledge",
-      description: "Deep learning from scratch. No TensorFlow, no PyTorch.",
+      description: "Deep learning fundamentals built from scratch using NumPy. No frameworks, pure implementation of neural networks and optimization algorithms.",
       technologies: ["Python", "NumPy", "Deep Learning"],
       github: "https://github.com/binaryecheos/elite-ball-knowledge",
       demo: "",
       status: "Ongoing",
     },
     {
-      title: "dtc-route-rationalization",
-      description: "This project implements a comprehensive framework for dynamic bus service rationalization designed to combat bus bunching and improve headway regularity in urban transit systems.",
-      technologies: ["Gym","XGBoost", "OTD", "Reinforcement Learning"],
-      github: "https://github.com/binaryecheos/dtc-route-rationalization",
-      demo: "",
-      status: "Ongoing",
+      title: "Healthetico",
+      description: "AI-powered healthcare platform providing personalized patient care recommendations and predictive health analytics using GenAI.",
+      technologies: ["Next.js", "Flask", "GenAI", "Python"],
+      github: "https://github.com/binaryecheos/SU-NATIONAL-HACKATHON",
+      demo: "https://su-national-hackathon.vercel.app/",
+      status: "Completed",
     },
     {
       title: "Machine Learning Pipeline",
-      description: "Robust ML pipeline for price prediction with MLflow integration and automated deployment for real-time predictions.",
-      technologies: ["MlOps","CI/CD", "Python", "Machine Learning"],
+      description: "Production-grade ML pipeline for price prediction with MLflow integration, automated testing, and continuous deployment.",
+      technologies: ["MLOps", "CI/CD", "Python", "MLflow"],
       github: "https://github.com/binaryecheos/Price-Prediction-Model",
       demo: "",
       status: "Ongoing",
     },
     {
-      title: "Healthetico",
-      description: "AI-powered healthcare platform for personalized patient care and predictive analytics to eliminate the first prescription.",
-      technologies: ["NextJs","Flask", "Python", "GenAI"],
-      github: "https://github.com/binaryecheos/SU-NATIONAL-HACKATHON",
-      demo: "https://su-national-hackathon.vercel.app/",
-      status: "Ongoing",
-    },
-    {
       title: "Disease Prediction System",
-      description: "State-of-the-art AI, symptom checking, and biometric data analysis. By integrating symptom NLP, health data, and real-time doctor connection, it enables timely medical insights and improves access to qualified care",
-      technologies: ["NER","HugginFace", "SHAP", "XGBoost"],
+      description: "Medical diagnosis system integrating NLP for symptom analysis, XGBoost classification, and SHAP explainability with real-time doctor connection.",
+      technologies: ["NER", "HuggingFace", "SHAP", "XGBoost"],
       github: "https://github.com/binaryecheos/symptom-disease-predictor-",
       demo: "",
-      status: "to be pushed",
+      status: "In Progress",
     }
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="py-6">
-        <nav className="max-w-4xl mx-auto flex justify-between items-center px-4 text-sm font-medium">
-          <div className="flex items-center gap-4 text-muted-foreground">
+      <header className="border-b border-border/40">
+        <nav className="max-w-3xl mx-auto flex justify-between items-center px-6 py-6 text-sm">
+          <div className="flex items-center gap-8">
             <Link
               href="/"
-              className="p-2 rounded-xl hover:bg-secondary/50 hover:text-foreground transition-all duration-300 ease-in-out hover:scale-105"
+              className="text-muted hover:text-foreground transition-colors"
             >
               ← Back
             </Link>
-            <Link
-              href="/projects"
-              className="px-4 py-2 rounded-xl hover:bg-secondary/50 hover:text-foreground transition-all duration-300 ease-in-out hover:scale-105"
-            >
-              work
-            </Link>
-            <Link
-              href="/blog"
-              className="px-4 py-2 rounded-xl hover:bg-secondary/50 hover:text-foreground transition-all duration-300 ease-in-out hover:scale-105"
-            >
-              notes
-            </Link>
+            <div className="flex gap-6 text-muted">
+              <Link
+                href="/projects"
+                className="font-semibold text-foreground"
+              >
+                work
+              </Link>
+              <Link
+                href="/blog"
+                className="hover:text-foreground transition-colors"
+              >
+                notes
+              </Link>
+            </div>
           </div>
-
-          <button className="p-2 rounded-xl hover:bg-secondary/50 transition-all duration-300 ease-in-out hover:scale-105">
-            <Sun className="w-5 h-5 text-muted-foreground" />
-          </button>
         </nav>
       </header>
 
       {/* Main */}
-      <main className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-2xl font-bold mb-8 text-foreground">work</h1>
+      <main className="max-w-3xl mx-auto px-6 py-16">
+        <div className="space-y-4 mb-16">
+          <h1 className="text-4xl font-bold tracking-tight">work & projects</h1>
+          <p className="text-muted text-lg">
+            A collection of projects spanning machine learning, backend systems, and research implementation.
+          </p>
+        </div>
 
         <div className="grid gap-6">
           {projects.map((project, index) => (
-            <div key={index} className="border border-border/50 rounded-2xl p-4 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 ease-in-out bg-card/50 backdrop-blur-sm">
-              <div className="flex justify-between items-start mb-3">
-                <h2 className="text-lg font-semibold text-card-foreground">{project.title}</h2>
-                <span className={`px-2 py-0.5 rounded-full text-xs font-medium transition-all duration-300 ${
-                  project.status === 'Completed'
-                    ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 hover:bg-green-200 dark:hover:bg-green-800'
-                    : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 hover:bg-yellow-200 dark:hover:bg-yellow-800'
-                }`}>
-                  {project.status}
-                </span>
-              </div>
+            <div
+              key={index}
+              className="border border-border rounded-lg p-6 hover:border-foreground/50 hover:bg-border/20 transition-all duration-300 group"
+            >
+              <div className="flex justify-between items-start gap-4 mb-4">
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold tracking-tight mb-2">
+                    {project.title}
+                  </h2>
+                  <p className="text-muted leading-relaxed text-sm mb-4">
+                    {project.description}
+                  </p>
 
-              <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{project.description}</p>
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs bg-border/60 px-2.5 py-1 rounded text-muted font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
-              <div className="flex flex-wrap gap-2 mb-3">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-0.5 bg-secondary text-secondary-foreground rounded-full text-xs font-medium hover:bg-secondary/80 transition-colors duration-200"
-                  >
-                    {tech}
+                  {/* Links */}
+                  <div className="flex gap-4">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted transition-colors"
+                      >
+                        <Github className="w-4 h-4" />
+                        Code
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Status Badge */}
+                <div className="flex-shrink-0">
+                  <span className={`text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap ${
+                    project.status === 'Completed'
+                      ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                      : project.status === 'Ongoing'
+                      ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
+                      : 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
+                  }`}>
+                    {project.status}
                   </span>
-                ))}
-              </div>
-
-              <div className="flex gap-4">
-                <Link
-                  href={project.github}
-                  target="_blank"
-                  className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-all duration-300 ease-in-out hover:gap-2 group"
-                >
-                  <Github className="w-3.5 h-3.5 transition-transform duration-300 group-hover:scale-110" />
-                  Code
-                </Link>
-                <Link
-                  href={project.demo}
-                  target="_blank"
-                  className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-all duration-300 ease-in-out hover:gap-2 group"
-                >
-                  <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover:scale-110" />
-                  Demo
-                </Link>
+                </div>
               </div>
             </div>
           ))}

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowUpRight, Sun } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 interface BlogPost {
   title: string
@@ -95,95 +95,100 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="py-6">
-        <nav className="max-w-4xl mx-auto flex justify-between items-center px-4 text-sm font-medium">
-          <div className="flex items-center gap-4 text-muted-foreground">
-            <Link
-              href="/"
-              className="p-2 rounded-xl hover:bg-secondary/50 hover:text-foreground transition-all duration-300 ease-in-out hover:scale-105"
-            >
-              ← Back
-            </Link>
-            <Link
-              href="/projects"
-              className="px-4 py-2 rounded-xl hover:bg-secondary/50 hover:text-foreground transition-all duration-300 ease-in-out hover:scale-105"
-            >
-              work
-            </Link>
+      <header className="border-b border-border/40">
+        <nav className="max-w-3xl mx-auto flex justify-between items-center px-6 py-6 text-sm">
+          <div className="flex items-center gap-8">
             <Link
               href="/blog"
-              className="px-4 py-2 rounded-xl hover:bg-secondary/50 hover:text-foreground transition-all duration-300 ease-in-out hover:scale-105"
+              className="text-muted hover:text-foreground transition-colors"
             >
-              notes
+              ← Blog
             </Link>
+            <div className="flex gap-6 text-muted">
+              <Link
+                href="/projects"
+                className="hover:text-foreground transition-colors"
+              >
+                work
+              </Link>
+            </div>
           </div>
-
-          <button className="p-2 rounded-xl hover:bg-secondary/50 transition-all duration-300 ease-in-out hover:scale-105">
-            <Sun className="w-5 h-5 text-muted-foreground" />
-          </button>
         </nav>
       </header>
 
       {/* Main */}
-      <main className="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-16">
-        {/* Intro */}
-        <section className="space-y-6 max-w-2xl text-muted-foreground">
-          <h1 className="text-2xl font-bold text-primary">
-            {post.title}
-          </h1>
+      <main className="max-w-2xl mx-auto px-6 py-16">
+        {/* Header */}
+        <article className="space-y-8">
+          <div className="space-y-4">
+            <time className="text-sm text-muted">{post.date}</time>
+            <h1 className="text-3xl font-bold tracking-tight">
+              {post.title}
+            </h1>
+            <p className="text-lg text-muted leading-relaxed">
+              {post.excerpt}
+            </p>
+          </div>
 
-          <p className="text-primary">
-            {post.date}
-          </p>
+          {/* Content */}
+          <div className="prose prose-invert max-w-none space-y-6">
+            {post.content.split('\n\n').map((paragraph, idx) => {
+              // Handle dividers
+              if (paragraph.trim() === '---') {
+                return <hr key={idx} className="border-t border-border/40 my-8" />
+              }
 
-          <div className="text-base leading-relaxed text-muted-foreground">
-            {post.content.split('\n').map((line, index) => {
-              if (line.startsWith('# ')) {
-                return <h2 key={index} className="text-xl font-semibold mt-8 mb-4 text-primary">{line.substring(2)}</h2>
+              // Handle headings
+              if (paragraph.startsWith('# ')) {
+                return (
+                  <h2 key={idx} className="text-2xl font-bold pt-4">
+                    {paragraph.substring(2)}
+                  </h2>
+                )
               }
-              if (line.startsWith('## ')) {
-                return <h3 key={index} className="text-lg font-medium mt-6 mb-3 text-primary">{line.substring(3)}</h3>
+
+              if (paragraph.startsWith('## ')) {
+                return (
+                  <h3 key={idx} className="text-xl font-semibold pt-2">
+                    {paragraph.substring(3)}
+                  </h3>
+                )
               }
-              if (line.startsWith('### ')) {
-                return <h4 key={index} className="text-base font-medium mt-4 mb-2 text-primary">{line.substring(4)}</h4>
-              }
-              if (line.startsWith('- ')) {
-                return <li key={index} className="ml-4 mb-2">{line.substring(2)}</li>
-              }
-              if (line.trim() === '') {
-                return <br key={index} />
-              }
-              if (line.startsWith('1. ')) {
-                return <li key={index} className="ml-4 mb-2 list-decimal">{line.substring(3)}</li>
-              }
-              return <p key={index} className="mb-4">{line}</p>
+
+              // Regular paragraphs
+              return (
+                <p key={idx} className="text-base leading-relaxed text-muted">
+                  {paragraph}
+                </p>
+              )
             })}
           </div>
 
-          <p className="text-sm">
-            End of post.
-          </p>
+          {/* Footer */}
+          <div className="space-y-8 pt-8 mt-8 border-t border-border/40">
+            <p className="text-sm text-muted">
+              End of article.
+            </p>
 
-          {/* Links */}
-          <div className="flex gap-4 font-semibold">
-            <Link
-              href="/blog"
-              className="group flex items-center text-primary hover:text-foreground transition"
-            >
-              notes
-              <ArrowUpRight className="ml-1 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </Link>
-            <Link
-              href="/projects"
-              className="group flex items-center text-primary hover:text-foreground transition"
-            >
-              work + exp.
-              <ArrowUpRight className="ml-1 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </Link>
+            <div className="flex gap-4">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 font-medium hover:text-muted transition-colors group"
+              >
+                ← Back to Blog
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 font-medium hover:text-muted transition-colors group"
+              >
+                See my work
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+            </div>
           </div>
-        </section>
+        </article>
       </main>
     </div>
   )

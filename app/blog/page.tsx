@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowUpRight, Sun } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function BlogPage() {
   const posts = [
@@ -12,62 +12,64 @@ export default function BlogPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="py-6">
-        <nav className="max-w-4xl mx-auto flex justify-between items-center px-4 text-sm font-medium">
-          <div className="flex items-center gap-4 text-muted-foreground">
+      <header className="border-b border-border/40">
+        <nav className="max-w-3xl mx-auto flex justify-between items-center px-6 py-6 text-sm">
+          <div className="flex items-center gap-8">
             <Link
               href="/"
-              className="p-2 rounded-xl hover:bg-secondary/50 hover:text-foreground transition-all duration-300 ease-in-out hover:scale-105"
+              className="text-muted hover:text-foreground transition-colors"
             >
               ← Back
             </Link>
-            <Link
-              href="/projects"
-              className="px-4 py-2 rounded-xl hover:bg-secondary/50 hover:text-foreground transition-all duration-300 ease-in-out hover:scale-105"
-            >
-              work
-            </Link>
-            <Link
-              href="/blog"
-              className="px-4 py-2 rounded-xl hover:bg-secondary/50 hover:text-foreground transition-all duration-300 ease-in-out hover:scale-105"
-            >
-              notes
-            </Link>
+            <div className="flex gap-6 text-muted">
+              <Link
+                href="/projects"
+                className="hover:text-foreground transition-colors"
+              >
+                work
+              </Link>
+              <Link
+                href="/blog"
+                className="font-semibold text-foreground"
+              >
+                notes
+              </Link>
+            </div>
           </div>
-
-          <button className="p-2 rounded-xl hover:bg-secondary/50 transition-all duration-300 ease-in-out hover:scale-105">
-            <Sun className="w-5 h-5 text-muted-foreground" />
-          </button>
         </nav>
       </header>
 
       {/* Main */}
-      <main className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-2xl font-bold mb-8 text-foreground">notes</h1>
+      <main className="max-w-3xl mx-auto px-6 py-16">
+        <div className="space-y-4 mb-16">
+          <h1 className="text-4xl font-bold tracking-tight">notes & articles</h1>
+          <p className="text-muted text-lg">
+            Thoughts on learning, research, and building ML systems.
+          </p>
+        </div>
 
-        <div className="space-y-8">
+        <div className="space-y-1">
           {posts.map((post) => (
-            <article key={post.slug} className="border-b border-border/50 pb-8 last:border-b-0 group">
-              <h2 className="text-lg font-semibold mb-2">
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="hover:text-primary transition-all duration-300 ease-in-out group-hover:translate-x-1 inline-block"
-                >
-                  {post.title}
-                </Link>
-              </h2>
-              <p className="text-xs text-muted-foreground mb-4 opacity-80">{post.date}</p>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{post.excerpt}</p>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 ease-in-out hover:gap-3 group text-sm"
-              >
-                read more
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
-              </Link>
-            </article>
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="block p-6 border border-border rounded-lg hover:border-foreground/50 hover:bg-border/20 transition-all duration-300 group"
+            >
+              <div className="flex justify-between items-start gap-4">
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm text-muted mb-2">{post.date}</div>
+                  <h2 className="text-xl font-semibold tracking-tight mb-3 group-hover:text-muted transition-colors">
+                    {post.title}
+                  </h2>
+                  <p className="text-muted text-base leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                </div>
+                <ArrowUpRight className="w-5 h-5 text-muted group-hover:text-foreground transition-colors flex-shrink-0 mt-1" />
+              </div>
+            </Link>
           ))}
         </div>
       </main>
