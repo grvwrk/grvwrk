@@ -10,8 +10,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,10 +34,74 @@ body {
   transition: background-color 0.2s, color 0.2s;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeInUp-1 {
+  animation: fadeInUp 0.6s ease-out 0.1s forwards;
+}
+
+.animate-fadeInUp-2 {
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+}
+
+.animate-fadeInUp-3 {
+  animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+.animate-fadeInUp-4 {
+  animation: fadeInUp 0.6s ease-out 0.4s forwards;
+}
+
+.animate-fadeInUp-5 {
+  animation: fadeInUp 0.6s ease-out 0.5s forwards;
+}
+
+.animate-delay-tag-1 {
+  animation: fadeInUp 0.6s ease-out 0.35s forwards;
+}
+
+.animate-delay-tag-2 {
+  animation: fadeInUp 0.6s ease-out 0.4s forwards;
+}
+
+.animate-delay-tag-3 {
+  animation: fadeInUp 0.6s ease-out 0.45s forwards;
+}
+
+.animate-delay-tag-4 {
+  animation: fadeInUp 0.6s ease-out 0.5s forwards;
 }
