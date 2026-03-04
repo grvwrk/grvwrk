@@ -12,15 +12,15 @@ export default function ProjectsPage() {
       status: "Ongoing",
     },
     {
-      title: "elite-ball-knowledge",
-      description: "Deep learning fundamentals built from scratch using NumPy. No frameworks, pure implementation of neural networks and optimization algorithms.",
-      technologies: ["Python", "NumPy", "Deep Learning"],
-      github: "https://github.com/binaryecheos/elite-ball-knowledge",
+      title: "takara",
+      description: "SLM‑driven worker and extension for constraint‑based frontend generation in FastAPI applications.",
+      technologies: ["Python", "Transformers", "FastAPI"],
+      github: "https://github.com/binaryecheos/takara",
       demo: "",
       status: "Ongoing",
     },
     {
-      title: "Healthetico",
+      title: "Healthico",
       description: "AI-powered healthcare platform providing personalized patient care recommendations and predictive health analytics using GenAI.",
       technologies: ["Next.js", "Flask", "GenAI", "Python"],
       github: "https://github.com/binaryecheos/SU-NATIONAL-HACKATHON",
@@ -33,15 +33,15 @@ export default function ProjectsPage() {
       technologies: ["MLOps", "CI/CD", "Python", "MLflow"],
       github: "https://github.com/binaryecheos/Price-Prediction-Model",
       demo: "",
-      status: "Ongoing",
+      status: "Completed",
     },
     {
-      title: "Disease Prediction System",
-      description: "Medical diagnosis system integrating NLP for symptom analysis, XGBoost classification, and SHAP explainability with real-time doctor connection.",
-      technologies: ["NER", "HuggingFace", "SHAP", "XGBoost"],
-      github: "https://github.com/binaryecheos/symptom-disease-predictor-",
+      title: "slurb",
+      description: "CV Model : finetuned yolov8 model to detect the road hazards",
+      technologies: ["CV", "yolo", "CNN"],
+      github: "https://github.com/binaryecheos/slurb",
       demo: "",
-      status: "In Progress",
+      status: "Completed",
     }
   ]
 

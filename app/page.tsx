@@ -187,14 +187,15 @@ export default function HomePage() {
               Gourav Sahu
             </h1>
             <p className="text-lg text-muted">
-              Neural Systems Engineer.
+              Modelling Engineer.
             </p>
           </div>
 
           <p className="text-base leading-relaxed text-muted max-w-2xl">
-            Building production ML systems at the intersection of research and engineering. 
-            Focused on small language models, optimization, and turning academic papers into 
-            working systems. Currently exploring how to make AI more efficient and practical.
+            i'm studying AI and computational systems, focusing on model efficiency and
+            research-to-implementation work.
+            my interest extends to neural decoding, evolutionary behavioral theory and
+            cognitive thinking.
           </p>
 
           {/* CTA Links */}
@@ -238,11 +239,10 @@ export default function HomePage() {
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold flex items-center gap-2 mb-2 group-hover:text-muted transition-colors duration-300">
                     <Github className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                    dtc-route-rationalization
+                     SLM-tinystories
                   </h3>
                   <p className="text-muted text-sm leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
-                    Dynamic bus service rationalization using reinforcement learning and XGBoost 
-                    to combat bus bunching and improve headway regularity in urban transit systems.
+                    TinyStories-based small language model in a Jupyter notebook, training a tiny GPT-style Transformer on the synthetic TinyStories kids-story dataset to see how small you can go while still getting coherent English.
                   </p>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {['RL', 'XGBoost', 'Python', 'Optimization'].map((tag) => (
@@ -270,8 +270,8 @@ export default function HomePage() {
           <div className="grid gap-4">
             {[
               {
-                title: 'elite-ball-knowledge',
-                desc: 'Deep learning fundamentals from scratch using NumPy',
+                title: 'oppimista-logs',
+                desc: 'This repo is where I keep experiments, math notes, model implementations and ML systems',
               },
               {
                 title: 'Healthetico',
