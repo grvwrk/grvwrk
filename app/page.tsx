@@ -1,12 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowUpRight, Github, Moon, Sun } from 'lucide-react'
 import { useEffect, useState, useRef } from 'react'
 
 // Neural network background component
-function NeuralBackground() {
+function NeuralBackground({ isDark }: { isDark: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   
   useEffect(() => {
@@ -49,15 +48,10 @@ function NeuralBackground() {
       })
     }
 
-    const isDarkMode = () => {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
-    }
-
     const animate = () => {
-      const isDark = isDarkMode()
-      const bg = isDark ? 'rgba(15, 15, 15, 0.1)' : 'rgba(250, 250, 250, 0.1)'
-      const lineColor = isDark ? 'rgba(160, 160, 160, 0.08)' : 'rgba(115, 115, 115, 0.08)'
-      const nodeColor = isDark ? 'rgba(200, 200, 200, 0.15)' : 'rgba(100, 100, 100, 0.12)'
+      const bg = isDark ? 'rgba(15, 15, 15, 0.3)' : 'rgba(250, 250, 250, 0.3)'
+      const lineColor = isDark ? 'rgba(160, 160, 160, 0.12)' : 'rgba(115, 115, 115, 0.12)'
+      const nodeColor = isDark ? 'rgba(200, 200, 200, 0.25)' : 'rgba(100, 100, 100, 0.2)'
 
       ctx.fillStyle = bg
       ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -114,33 +108,43 @@ function NeuralBackground() {
     return () => {
       window.removeEventListener('resize', resizeCanvas)
     }
-  }, [])
+  }, [isDark])
 
   return (
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.8 }}
     />
   )
 }
 
 export default function HomePage() {
   const [isDark, setIsDark] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches)
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true)
+    // Check localStorage first, then system preference
+    const savedTheme = localStorage.getItem('theme')
+    const darkMode = savedTheme ? savedTheme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+    setIsDark(darkMode)
+    document.documentElement.classList.toggle('dark', darkMode)
   }, [])
 
   const toggleTheme = () => {
-    const html = document.documentElement
-    html.style.colorScheme = isDark ? 'light' : 'dark'
-    setIsDark(!isDark)
+    const newIsDark = !isDark
+    setIsDark(newIsDark)
+    document.documentElement.classList.toggle('dark', newIsDark)
+    localStorage.setItem('theme', newIsDark ? 'dark' : 'light')
   }
+
+  if (!mounted) return null
 
   return (
     <div className="min-h-screen bg-background text-foreground relative">
-      <NeuralBackground />
+      <NeuralBackground isDark={isDark} />
       {/* Header */}
       <header className="border-b border-border/40 backdrop-blur-sm sticky top-0 z-50 bg-background/80">
         <nav className="max-w-3xl mx-auto flex justify-between items-center px-6 py-6 text-sm">
@@ -192,7 +196,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-base leading-relaxed text-muted max-w-2xl">
-            i'm studying AI and computational systems, focusing on model efficiency and
+            i&apos;m studying AI and computational systems, focusing on model efficiency and
             research-to-implementation work.
             my interest extends to neural decoding, evolutionary behavioral theory and
             cognitive thinking.
@@ -295,7 +299,7 @@ export default function HomePage() {
 
         {/* Social Links */}
         <section className="mt-20 pt-12 border-t border-border/40 animate-fadeInUp-4">
-          <p className="text-sm text-muted mb-4">Let's connect</p>
+          <p className="text-sm text-muted mb-4">Let&apos;s connect</p>
           <div className="flex gap-6">
             <a
               href="https://github.com/binaryecheos"
