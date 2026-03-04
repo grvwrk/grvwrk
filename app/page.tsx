@@ -249,7 +249,7 @@ export default function HomePage() {
                     TinyStories-based small language model in a Jupyter notebook, training a tiny GPT-style Transformer on the synthetic TinyStories kids-story dataset to see how small you can go while still getting coherent English.
                   </p>
                   <div className="flex flex-wrap gap-2 mt-4">
-                    {['RL', 'XGBoost', 'Python', 'Optimization'].map((tag) => (
+                    {[ 'Transformer', 'Pytorch', 'Optimization'].map((tag) => (
                       <span
                         key={tag}
                         className="text-xs bg-border/60 px-2 py-1 rounded text-muted hover:bg-border hover:text-foreground transition-all duration-200"
