@@ -37,6 +37,6 @@ language video into natural language text; 3d cnn + cross-attention + llm ground
 
 ---
 
-writing at [raw gradients](https://www.grvwrk.dev/blog/raw-gradients) — notes from building ml systems under a 6gb vram constraint.
+writing at [https://www.grvwrk.dev/blog](https://www.grvwrk.dev/blog/pico-vllm) — notes from building ml systems under a 6gb vram constraint.
 
 </div>
