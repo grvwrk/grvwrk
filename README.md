@@ -33,6 +33,8 @@ language video into natural language text; 3d cnn + cross-attention + llm ground
 
 <div align="center">
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=grvwrk&theme=minimal&hide_border=true&area=true" width="900"/>
+<img src="https://komarev.com/ghpvc/?username=grvwrk-git&style=for-the-badge&color=blueviolet" alt="Profile views"/>
+
 </div>
 
 ---
