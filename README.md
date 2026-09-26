@@ -8,10 +8,6 @@
 
 ### currently building
 
-**pico-vllm** — minimal vllm-style inference engine, pure pytorch, single gpu
-paged kv-cache and continuous batching implemented. scheduler/engine/server in progress.
-`github.com/grvwrk/pico-vllm`
-
 **spatiotemporal-multimodal-transformer** — multimodal pipeline for translating sign
 language video into natural language text; 3d cnn + cross-attention + llm grounding.
 `github.com/grvwrk/Spatiotemporal-MultiModel-Transformer`
